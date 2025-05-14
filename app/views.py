@@ -1,5 +1,8 @@
 from django.http import HttpResponse
 
+from app.models import Task
+
+
 # def dushanba(request):
 #     return HttpResponse('Dushanba')
 # def seshanba(request):
@@ -16,5 +19,6 @@ from django.http import HttpResponse
 #     return HttpResponse('Yakshanba')
 
 
-def week(request, week_name):
-    return HttpResponse(week_name)
+def day_task(request, week_day):
+    daily_task = Task.objects.get(day=week_day)
+    return HttpResponse(f"{daily_task.task}")

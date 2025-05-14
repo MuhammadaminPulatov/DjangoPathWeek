@@ -1,7 +1,8 @@
 from django.urls import path
 
-from app.views import week
+from app.views import day_task
 
+# from app.views import dushanba,seshanba,chorshanba,payshanba,juma,shanba,yakshanba
 
 # urlpatterns = [
 #     path('dushanba/',dushanba),
@@ -14,5 +15,5 @@ from app.views import week
 # ]
 
 urlpatterns = [
-    path('<str:week_name>/',week)
+     path('<str:week_day>/',day_task)
 ]
